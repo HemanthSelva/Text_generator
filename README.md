@@ -1,48 +1,30 @@
-📂 Gemini Text Response Generator
-A Python-based automation tool that generates AI responses using Google's Gemini API with automatic API key rotation.
-🚀 Features
-🔑 Multiple API key support
-🔄 Automatic key switching on quota exhaustion
-🧠 Structured prompt system
-📄 Output saved to file
-⚡ Fast response using Gemini Flash model
-🏗️ Project Structure
+# Gemini Text Response Generator
 
-├── main.py        # Core execution logic
-├── config.py      # API keys & model config
-├── prompts.py     # All prompts
-├── output.txt     # Generated results
-⚙️ Setup Instructions
-1. Install Dependencies
-Bash
-pip install google-generativeai
-2. Add API Keys
-Edit config.py:
-Python
-API_KEYS = [
-    "YOUR_API_KEY_1",
-    "YOUR_API_KEY_2"
-]
-3. Run the Project
-Bash
-python main.py
-🔄 API Key Rotation Logic
-If API quota is exceeded:
-Automatically switches to next key
-If all keys exhausted:
-Raises error
-📥 Output
-Results are saved in:
+## Overview
+This project reads structured prompts from prompts.py and generates
+text responses using Google Gemini API. It automatically rotates to
+the next API key when the current key's quota is exhausted.
 
-output.txt
-Includes:
-Prompt
-Role
-Task
-Response
-Status
-🧠 Example Use Cases
-AI prompt automation
-Bulk content generation
-Learning & experimentation
-Data science explanations# Text_generator
+## Project Structure
+- main.py       → Core logic, API key rotation, response generation
+- prompts.py    → All prompts with role and task structure
+- config.py     → API keys and model configuration
+- output.txt    → Generated responses (created after running)
+
+## How to Run (Google Colab)
+1. Upload Gemini_Text_Generator.ipynb to Google Colab
+2. Run all cells in order (Cell 1 to Cell 6)
+3. Output will be printed and saved to output.txt
+
+## Features
+- Multi-prompt processing (5 prompts)
+- Automatic API key rotation on quota exhaustion
+- Structured prompt format with Role and Task
+- Output saved to output.txt
+
+## Model Used
+- gemini-2.0-flash
+
+## API Keys
+- Uses 2 API keys from 2 different Google accounts
+- Auto-switches to Key 2 if Key 1 is exhausted
